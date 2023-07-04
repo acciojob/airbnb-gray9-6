@@ -12,35 +12,29 @@ import java.util.List;
 
 @Service
 public class HotelManagementService {
-    @Autowired
-    HotelManagementRepository hotelManagementRepository;
+    HotelManagementRepository repository = new HotelManagementRepository();
 
     public String addHotel(Hotel hotel) {
-        String add_Hotel =  hotelManagementRepository.addHotel(hotel);
-        if(add_Hotel != null){
-            return "SUCCESS";
-        }else{
-            return "FAILURE";
-        }
+        return  repository.addHotel(hotel);
     }
 
     public Integer addUser(User user) {
-        return hotelManagementRepository.addUser(user);
-    }
-
-    public String getHotelWithMostFacilities() {
-        return hotelManagementRepository.getHotelWithMostFacilities();
-    }
-
-    public int bookARoom(Booking booking) {
-        return hotelManagementRepository.bookARoom(booking);
-    }
-
-    public int getBookings(Integer aadharCard) {
-        return hotelManagementRepository.getBookings(aadharCard);
+        return repository.addUser(user);
     }
 
     public Hotel updateFacilities(List<Facility> newFacilities, String hotelName) {
-        return hotelManagementRepository.updateFacilities(newFacilities,hotelName);
+        return repository.updateFacilities(newFacilities,hotelName);
+    }
+
+    public String getHotelWithMostFacilities() {
+        return repository.getHotelWithMostFacilities();
+    }
+
+    public int bookARoom(Booking booking) {
+        return repository.bookARoom(booking);
+    }
+
+    public int getBookings(Integer aadharCard) {
+        return repository.getBookings(aadharCard);
     }
 }
