@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class HotelManagementService {
+
     HotelManagementRepository repository = new HotelManagementRepository();
 
     public String addHotel(Hotel hotel) {
