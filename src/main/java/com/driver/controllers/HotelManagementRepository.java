@@ -1,15 +1,12 @@
-package com.driver.repository;
+package com.driver.controllers;
 
 import com.driver.model.Booking;
 import com.driver.model.Facility;
 import com.driver.model.Hotel;
 import com.driver.model.User;
-import org.springframework.stereotype.Repository;
+import io.swagger.models.auth.In;
 
-import javax.swing.plaf.metal.MetalTabbedPaneUI;
 import java.util.*;
-
-@Repository
 public class HotelManagementRepository {
     Map<String, Hotel> hotelMap = new HashMap<>();
     Map<Integer, User> userMap = new HashMap<>();
